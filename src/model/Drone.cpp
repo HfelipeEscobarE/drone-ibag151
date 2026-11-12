@@ -13,9 +13,7 @@ void Drone::exigirEnVuelo() const {
 }
 
 void Drone::despegar() {
-    if (enVuelo_) {
-        throw OperacionInvalida("El drone ya esta en vuelo");
-    }
+    
     enVuelo_ = true;
     altitud_ = ALTURA_DESPEGUE;
     canal_.enviar("DESPEGAR");
