@@ -55,13 +55,13 @@ void Drone::bajar() {
 
 void Drone::girarDerecha() {
     exigirEnVuelo();
-    rumbo_ = (rumbo_ + GRADOS_POR_GIRO) % 360;
+    rumbo_ = (rumbo_ + GRADOS_POR_GIRO) % GRADOS_VUELTA_COMPLETA;
     canal_.enviar("GIRAR_DERECHA");
 }
 
 void Drone::girarIzquierda() {
     exigirEnVuelo();
-    rumbo_ = (rumbo_ + 360 - GRADOS_POR_GIRO) % 360;
+    rumbo_ = (rumbo_ + GRADOS_VUELTA_COMPLETA - GRADOS_POR_GIRO) % GRADOS_VUELTA_COMPLETA;
     canal_.enviar("GIRAR_IZQUIERDA");
 }
 

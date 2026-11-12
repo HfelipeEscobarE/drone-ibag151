@@ -15,7 +15,7 @@ public:
     static constexpr int VELOCIDAD_MAXIMA = 60;    // km/h
     static constexpr int PASO_VELOCIDAD = 10;      // km/h por orden
     static constexpr int GRADOS_POR_GIRO = 90;
-
+    static constexpr int GRADOS_VUELTA_COMPLETA = 360;
     explicit Drone(ICanalDrone& canal);
 
     void despegar() override;
