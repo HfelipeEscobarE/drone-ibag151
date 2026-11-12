@@ -76,7 +76,9 @@ void Drone::acelerar() {
 
 void Drone::frenar() {
     exigirEnVuelo();
-    
+    if (velocidad_ == 0) {
+        throw OperacionInvalida("El drone ya esta detenido");
+    }
     velocidad_ -= PASO_VELOCIDAD;
     canal_.enviar("FRENAR");
 }
