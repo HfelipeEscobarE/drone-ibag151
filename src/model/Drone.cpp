@@ -26,7 +26,10 @@ void Drone::aterrizar() {
     if (velocidad_ != 0) {
         throw OperacionInvalida("Hay que frenar por completo antes de aterrizar");
     }
-    
+    if (altitud_ > ALTURA_ATERRIZAJE) {
+        throw OperacionInvalida("Hay que bajar hasta la altura de aterrizaje antes de aterrizar");
+    }
+
     enVuelo_ = false;
     altitud_ = 0;
     canal_.enviar("ATERRIZAR");
